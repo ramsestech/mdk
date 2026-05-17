@@ -13,11 +13,10 @@ program
 
 program
   .command('bootstrap')
-  .description('One-shot setup of both SDK + Engine repos (not yet implemented)')
+  .description('One-shot setup of both SDK + Engine repos from a clean machine')
   .option('--dir <path>', 'Workspace directory', `${process.env.HOME}/Ramses`)
-  .action(() => {
-    console.log('mdk bootstrap: not yet implemented (Phase 2)');
-    process.exit(1);
+  .action(async (opts) => {
+    await require('./commands/bootstrap').runBootstrap(opts);
   });
 
 program
