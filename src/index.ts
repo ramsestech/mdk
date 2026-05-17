@@ -48,6 +48,14 @@ featureCmd
   });
 
 featureCmd
+  .command('status [name]')
+  .description('Status of in-flight features')
+  .option('--mine', 'Only my features (defers to v0.3)', false)
+  .action((name, opts) => {
+    require('./commands/feature-status').runFeatureStatus({ name, ...opts });
+  });
+
+featureCmd
   .command('submit')
   .description('Push both branches and open two linked PRs')
   .option('--draft', 'Open as draft PRs', false)
