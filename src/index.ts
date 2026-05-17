@@ -28,6 +28,15 @@ program
 
 const featureCmd = program.command('feature').description('Cross-repo feature management');
 
+program
+  .command('codegen')
+  .description('Run pnpm contracts:gen (or :check) in the SDK repo')
+  .option('--check', 'Dry-run + diff (contracts:check)', false)
+  .option('--dir <path>', 'Workspace directory', `${process.env.HOME}/Ramses`)
+  .action((opts) => {
+    require('./commands/codegen').runCodegen(opts);
+  });
+
 featureCmd
   .command('start <name>')
   .description('Create cross-repo feature branches + scaffold')
