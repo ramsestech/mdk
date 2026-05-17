@@ -47,4 +47,14 @@ featureCmd
     await require('./commands/feature-start').runFeatureStart({ name, ...opts });
   });
 
+featureCmd
+  .command('submit')
+  .description('Push both branches and open two linked PRs')
+  .option('--draft', 'Open as draft PRs', false)
+  .option('--title <s>', 'PR title (defaults to feature id)')
+  .option('--dir <path>', 'Workspace directory', `${process.env.HOME}/Ramses`)
+  .action(async (opts) => {
+    await require('./commands/feature-submit').runFeatureSubmit(opts);
+  });
+
 program.parse();
