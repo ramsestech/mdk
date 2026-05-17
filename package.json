@@ -1,6 +1,6 @@
 {
   "name": "@ramses-superapp/mdk",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Mini Development Kit — contributor CLI for the Ramses Super App platform",
   "license": "UNLICENSED",
   "private": false,
