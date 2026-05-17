@@ -22,10 +22,9 @@ program
 
 program
   .command('doctor')
-  .description('Health check (not yet implemented)')
+  .description('Health check — verify node, pnpm, gh, Xcode CLI tools, CocoaPods')
   .action(() => {
-    console.log('mdk doctor: not yet implemented (Phase 2)');
-    process.exit(1);
+    require('./commands/doctor').runDoctor();
   });
 
 program.parse();
