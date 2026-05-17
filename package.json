@@ -1,0 +1,56 @@
+{
+  "name": "@ramses-superapp/mdk",
+  "version": "0.1.0",
+  "description": "Mini Development Kit — contributor CLI for the Ramses Super App platform",
+  "license": "UNLICENSED",
+  "private": false,
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": [
+    "dist",
+    "package.json",
+    "README.md",
+    "LICENSE",
+    "CHANGELOG.md"
+  ],
+  "main": "dist/index.js",
+  "bin": {
+    "mdk": "dist/index.js"
+  },
+  "scripts": {
+    "build": "tsup",
+    "watch": "tsup --watch",
+    "clean": "rimraf dist",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest"
+  },
+  "dependencies": {
+    "commander": "^12.1.0",
+    "prompts": "^2.4.2",
+    "semver": "^7.6.3",
+    "chalk": "^4.1.2",
+    "ora": "^5.4.1"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.0",
+    "@types/prompts": "^2.4.9",
+    "@types/semver": "^7.5.0",
+    "rimraf": "^5.0.5",
+    "tsup": "^8.0.0",
+    "typescript": "~5.4.5",
+    "vitest": "^1.6.0"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ramsestech/mdk.git"
+  },
+  "homepage": "https://github.com/ramsestech/mdk#readme",
+  "bugs": {
+    "url": "https://github.com/ramsestech/mdk/issues"
+  }
+}
