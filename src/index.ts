@@ -26,4 +26,16 @@ program
     require('./commands/doctor').runDoctor();
   });
 
+const featureCmd = program.command('feature').description('Cross-repo feature management');
+
+featureCmd
+  .command('start <name>')
+  .description('Create cross-repo feature branches + scaffold')
+  .requiredOption('--type <type>', 'Feature type: api | component | permission | constraint')
+  .option('--family <family>', 'API family (required when --type api)')
+  .option('--dir <path>', 'Workspace directory', `${process.env.HOME}/Ramses`)
+  .action(async (name, opts) => {
+    await require('./commands/feature-start').runFeatureStart({ name, ...opts });
+  });
+
 program.parse();
